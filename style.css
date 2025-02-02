@@ -1,1 +1,29 @@
+body {
+  background-color: black;
+}
 
+.nontaskDIV {
+  text-align: center;
+}
+
+.labelCLASS {
+  margin-top: 0px;
+  color: white;
+  font-family: sans-serif;
+}
+
+.listboxCLASS {
+  border-radius: 7px;
+  border-style: solid;
+  border-width: 2.5px;
+  border-color: white;
+}
+
+.newtaskCLASS {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 5px;
+  width: 75px;
+}
