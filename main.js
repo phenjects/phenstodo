@@ -1,27 +1,32 @@
-const createTask = document.getElementById("newtaskID");
+
+// INFO: functionality variables.
 const taskInputField = document.getElementById("inputfieldID");
+const taskTags = [];
 
-createTask.onclick = function testFunc() {
-  const taskCreate = document.createElement("button");
-  const deleteCreate = document.createElement("button");
+// INFO: onclick function.
+function addNewTask() {
+
+  // INFO: creation variables.
+  const fieldset = document.createElement("fieldset");
+  const taskCheckbox = document.createElement("input");
+  const task = document.createElement("input");
   const lineBreak = document.createElement("br");
-  taskCreate.innerHTML = taskInputField.value;
-  taskCreate.setAttribute("style", `border: none; background-color:
-                                    black; color: white;`);
   
-  deleteCreate.innerHTML = "x"
-  deleteCreate.setAttribute("style", `border-style: solid;
-                                      background-color: black;
-                                      border-color: white;
-                                      color: white;
-                                      width: auto;
-                                      height: auto;
-                                      font-size: 15px;
-                                      border-radius: 7px;`
-                           );
-  deleteCreate.setAttribute("id", `deletebtnID`)
-  document.getElementById("tasksID").appendChild(taskCreate);
-  document.getElementById("tasksID").appendChild(deleteCreate);
-  document.getElementById("tasksID").appendChild(lineBreak);
-};
+  // INFO: setup before appending.
+  task.value = taskInputField.value;
+  taskCheckbox.type = "checkbox";
+  fieldset.setAttribute("id", `fieldset${taskTags.length}ID`);
+  fieldset.setAttribute("style", "margin-top: 5px;");
+  task.setAttribute("style", `border: none; background-color: black; color: white;`);
+  task.setAttribute("id", `task${taskTags.length}ID`);
 
+  // INFO: appends creation variables
+  document.getElementById("tasksDIV").appendChild(fieldset);
+  document.getElementById(`fieldset${taskTags.length}ID`).appendChild(taskCheckbox);
+  document.getElementById(`fieldset${taskTags.length}ID`).appendChild(task);
+  document.getElementById(`fieldset${taskTags.length}ID`).appendChild(lineBreak);
+
+  // INFO: pushes task IDs to tasks array.
+  taskTags.push(document.getElementById(`task${taskTags.length}ID`));
+
+};
